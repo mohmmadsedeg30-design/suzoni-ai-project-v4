@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.so
+venv/
+*.pt
+*.pth
+*.bin
+*.safetensors
+data/*.txt
+logs/
+checkpoints/*.pt
+.vscode/
+.idea/
+.DS_Store
