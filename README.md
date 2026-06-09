@@ -25,10 +25,13 @@ python web_ui.py
    ```bash
    python main.py setup
    ```
-2. **Train (Optional):**
+2. **Train (Optional, but Recommended for Smarter AI):**
+   To make Suzoni AI truly intelligent, train it with the provided dataset:
    ```bash
-   python main.py train --data your_data.txt
+   python main.py train --data training_data.txt
    ```
+   You can also create your own `your_data.txt` and train with it.
+   
 3. **Chat (Basic):**
    ```bash
    python main.py chat
@@ -41,11 +44,25 @@ python main.py integrate --model gpt2
 ```
 
 ## 📂 Project Structure
-- `tui.py` - **New** Colorful Terminal Interface
-- `web_ui.py` - **New** Web-based Interactive Dashboard
-- `config.py` - Model & System Settings
-- `model.py` - Neural Network Architecture (with Logic Layers)
-- `tokenizer.py` - Custom BPE Tokenizer
-- `trainer.py` - Training Logic
-- `chat.py` - Core Chat Engine
-- `main.py` - Command Line Entry Point
+- `training_data.txt` - **New** Sample dataset for training the model.
+- `app.py` - **New** Gradio application for Hugging Face Spaces deployment.
+- `tui.py` - Colorful Terminal Interface.
+- `web_ui.py` - Web-based Interactive Dashboard.
+- `config.py` - Model & System Settings.
+- `model.py` - Neural Network Architecture (with Logic Layers).
+- `tokenizer.py` - Custom BPE Tokenizer.
+- `trainer.py` - Training Logic.
+- `chat.py` - Core Chat Engine.
+- `main.py` - Command Line Entry Point.
+
+## 🚀 Deploy to Hugging Face Spaces
+
+To make your Suzoni AI publicly available, you can deploy it to Hugging Face Spaces:
+
+1.  **Create a new Space:** Go to [Hugging Face Spaces](https://huggingface.co/spaces) and create a new Space.
+2.  **Choose Gradio SDK:** Select `Gradio` as the SDK.
+3.  **Upload Files:** Upload all files from your `suzoni-ai-project-v4` directory to your Hugging Face Space, ensuring `app.py` is in the root.
+4.  **Install Dependencies:** In your Space settings, add `torch`, `rich`, `gradio` to `requirements.txt`.
+5.  **Run Setup:** Ensure you run `python main.py setup` in your Space's terminal (or locally and upload the `checkpoints` and `tokenizer.json` files) to initialize the model and tokenizer.
+
+Your Suzoni AI will then be live and accessible to everyone!
